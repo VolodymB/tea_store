@@ -25,14 +25,14 @@ require_once 'model/Comment.php';
 // echo '</pre>';
 // // $unit->save();
 
-// $user=new User();
-// $user->find(7);
-// $user->name='Alex';
-// $user->surname='Boy';
-// $user->email='goll@gu.hi';
-// $user->login='golli';
-// $user->password='12345root';
-// $user->save();
+$user=new User();
+$user->find(7);
+$user->name='Alex';
+$user->surname='Boy';
+$user->email='goll@gu.hi';
+$user->login='golli';
+$user->password='12345root';
+$user->save();
 
 // $worker=new Worker();
 // $worker->find(15);
@@ -65,11 +65,11 @@ $category->sort_order=7;
 
 // $unit2->save();
 
-$product=new Product();
-$product->find(2);
-echo '<pre>';
-var_dump($product->getComments());
-echo '</pre>';
+// $product=new Product();
+// $product->find(2);
+// echo '<pre>';
+// var_dump($product->getComments());
+// echo '</pre>';
 // var_dump($product->getUnits());
 
 // var_dump($product->categories);
