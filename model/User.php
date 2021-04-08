@@ -9,6 +9,7 @@ class User extends Model{
     public $login;
     public $password;
 
+
     public function find($id){
         $sql="SELECT * FROM `user` WHERE `id`=:id";
         $data=array(
@@ -48,6 +49,24 @@ class User extends Model{
     }
 
     public function getComments(){
+
+    }
+
+    public function login($email,$login,$password){
+        //перевірка чи існує користувач
+        //якщо існує, авторизація
+        //не існує переведення на поле реєстраціїї
+        //SELECT `id` FROM `user` WHERE `email`=,`login`=,`password`=
+        $sql="SELECT `id` FROM `user` WHERE `email`=:email AND `login`=:userLogin AND `password`=:userPassword";
+        $data=array(
+            'email'=>$email,
+            'userLogin'=>$login,
+            'userPassword'=>$password
+        );
+        if($result=$this->db->select($sql,$data)){            
+            return $result[0]['id'];
+            
+        }
 
     }
 

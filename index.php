@@ -13,6 +13,8 @@ require_once 'model/User.php';
 require_once 'model/Worker.php';
 require_once 'model/Comment.php';
 
+session_start();
+var_dump($_SESSION['user_id']);
 // $unit=new Unit();
 // $unit->find(3);
 // var_dump($unit->getProducts());
@@ -25,14 +27,14 @@ require_once 'model/Comment.php';
 // echo '</pre>';
 // // $unit->save();
 
-$user=new User();
-$user->find(7);
-$user->name='Alex';
-$user->surname='Boy';
-$user->email='goll@gu.hi';
-$user->login='golli';
-$user->password='12345root';
-$user->save();
+// $user=new User();
+// $user->find(7);
+// $user->name='Alex';
+// $user->surname='Boy';
+// $user->email='goll@gu.hi';
+// $user->login='golli';
+// $user->password='12345root';
+// $user->save();
 
 // $worker=new Worker();
 // $worker->find(15);
@@ -50,6 +52,15 @@ $user->save();
 // echo '<pre>';
 // var_dump($comment);
 // echo '</pre>';
+
+// $comment=new Comment();
+// $comment->find(3);
+// $comment->user_id='6';
+// $comment->comment='High cost';
+// $comment->raiting=5;
+// $comment->product_id=7;
+// $comment->save();
+
 
 $category=new Category();
 $category->find(1);

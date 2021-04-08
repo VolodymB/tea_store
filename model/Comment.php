@@ -5,7 +5,7 @@ class Comment extends Model{
     public $user_id;
     public $comment;
     public $raiting;
-    private $product_id;
+    public $product_id;
     public $user;
     public $product;
 
@@ -29,11 +29,23 @@ class Comment extends Model{
 
     public function save(){
         $data=array(
-
+            'userId'=>$this->user_id,
+            'comment'=>$this->comment,
+            'raiting'=>$this->raiting,
+            'productId'=>$this->product_id
         );
         if(is_null($this->id)){
-            $sql='';
+            //INSERT INTO `comment`(`user_id`, `comment`, `raiting`, `product_id`) VALUES ([value-2],[value-3],[value-4],[value-5])
+            $sql='INSERT INTO `comment`(`user_id`, `comment`, `raiting`, `product_id`) VALUES (:userId,:comment,:raiting,:productId)';
+        }else{
+            $sql='UPDATE `comment` SET `user_id`=:userId,`comment`=:comment,`raiting`=:raiting,`product_id`=:productId WHERE `id`=:id';
+            $data['id']=$this->id;
         }
+        if($result=$this->db->query($sql,$data)){
+            $this->id=$result;
+            return true;
+        }
+        return false;
     }
 
 
