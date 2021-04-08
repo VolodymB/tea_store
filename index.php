@@ -27,8 +27,11 @@ var_dump($_SESSION['user_id']);
 // echo '</pre>';
 // // $unit->save();
 
-// $user=new User();
-// $user->find(7);
+$user=new User();
+$user->find(2);
+echo '<pre>';
+var_dump($user->getComments());
+echo '</pre>';
 // $user->name='Alex';
 // $user->surname='Boy';
 // $user->email='goll@gu.hi';
