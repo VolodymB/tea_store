@@ -65,6 +65,14 @@ class Category extends Model{
             }
         }
 
+        public function getAll(){
+            $sql="SELECT * FROM `category`";
+            $data=array(
+
+            );
+            
+        }
+
     
 }
 ?>

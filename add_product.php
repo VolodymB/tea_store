@@ -22,28 +22,31 @@ var_dump($_POST);
     <input type="text" name='name' placeholder='name'><br>
     <input type="number" name='year' placeholder='year'><br>
     <textarea name="description" placeholder='description'></textarea><br>
-    <!-- <input type="image" name='image' placeholder='image'> -->
+    <input type="image" name='image'  src="">
     <p>Вибір категорії</p>
     <input type="checkbox" name='category' value='1'>1<br>
     <input type="checkbox" name='category' value='2'>2<br>
     <input type="checkbox" name='category' value='3'>3<br>
     <p>Оберіть статус</p>
-    <input type="radio" name='status' value='1'>1<br>
-    <input type="radio" name='status' value='2'>2<br>
-    <input type="radio" name='status' value='3'>3<br>
+    <select name="status">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    </select>
     <!-- необхідно зациклити диний сектор, для повторного вибору -->
     <p>Одниція виміру</p>
-    <input type="radio" name='unit' value='1'>1<br>
-    <input type="radio" name='unit' value='2'>2<br>
-    <input type="radio" name='unit' value='3'>3<br>
+    <select name="units">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    </select>
     <p>Ціна</p>
     <input type="number" name='price' placeholder='price'><br>
     <p>Кількість</p>
     <input type="number" name='quantity' placeholder='quantity'><br>
-    <p></p>
-    <a href="">Зберегти</a>
     <a href="">Продовжити</a><br>
     <!-- при натисканні продовжити, повторити форму -->
+    <br>
     <input type="submit" name='send'><br>
     
     </form>
