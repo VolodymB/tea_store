@@ -37,6 +37,7 @@ class Category extends Model{
             $data['id']=$this->id;
         }
         if($result=$this->db->query($sql,$data)){
+            $this->id=$result;
             return true;
         }
         return false;

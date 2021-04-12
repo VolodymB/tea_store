@@ -15,6 +15,7 @@ class Worker extends User{
             $this->user_id=$result[0]['user_id'];
             $this->role_id=$result[0]['role_id'];
             parent::find($this->user_id);           
+            $this->id=$result;
             return true;
         }
         return false;
