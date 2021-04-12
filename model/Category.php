@@ -65,12 +65,14 @@ class Category extends Model{
             }
         }
 
-        public function getAll(){
-            $sql="SELECT * FROM `category`";
+        public function getList(){
+            $sql="SELECT `name` FROM `category`";
             $data=array(
 
             );
-            
+            if($result=$this->db->select($sql,$data)){
+                return $result;                
+            }
         }
 
     

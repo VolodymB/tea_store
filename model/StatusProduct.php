@@ -1,4 +1,5 @@
 <?php
+require_once "Model.php";
 class StatusProduct extends Model{
     private $id;
     public $name;
@@ -30,6 +31,16 @@ class StatusProduct extends Model{
                 return true;
             }
             return false;        
+    }
+
+    public static function getList(){
+        $sql="SELECT * FROM `status_product`";
+            $data=array(
+
+            );
+            if($result=$this->db->select($sql,$data)){
+                return $result;                
+            }
     }
 }
 ?>

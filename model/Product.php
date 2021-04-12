@@ -1,13 +1,15 @@
 <?php
 require_once "Model.php";
+require_once 'StatusProduct.php';
 
 class Product extends Model{
-    private $id;
+    public $id;
     public $name;
     public $year;
     public $description;
     private $status_id;
     public $categories;
+    public $status;
 
     public function find($id){
         $sql="SELECT * FROM `product` WHERE `id`=:id";
@@ -41,6 +43,7 @@ class Product extends Model{
             $data['id']=$this->id;
         }
         if($result=$this->db->query($sql,$data)){
+            $this->id=$result;
             return true;
         }
         return false;
@@ -67,6 +70,11 @@ class Product extends Model{
         $status=new StatusProduct();
         $status->find($this->status_id);
         return $status;
+       }
+
+
+       public function setStatusId(int $status_id){
+        $this->status_id=$status_id;
        }
 
        public function getUnits(){
